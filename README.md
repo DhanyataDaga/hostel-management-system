@@ -23,6 +23,17 @@ A complete, responsive frontend for a hostel management system built with only H
 
 ---
 
+---
+
+### 🚀 Future Enhancements
+
+This project serves as a strong foundation, and I am actively thinking about ways to improve it. Some potential future enhancements include:
+
+* **Backend Integration:** Connecting the frontend to a real backend built with Node.js, Express, and a MongoDB database to handle live data.
+* **Real-Time Notifications:** Implementing a system for real-time alerts for students and admins.
+* **Detailed Analytics:** Adding charts and graphs to the admin dashboard to visualize bookings and revenue.
+* **Unit & E2E Testing:** Writing tests to ensure the application is robust and reliable.
+
 ## 🛠️ Tech Stack
 
 * HTML5
