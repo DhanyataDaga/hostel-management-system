@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Hostel HMS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-hotel"></i>
+                <h2>HMS Dashboard</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-link active"><i class="fas fa-tachometer-alt"></i> Overview</a>
+                <a href="preferences.html" class="nav-link student-only"><i class="fas fa-bed"></i> Room Details</a>
+                <a href="#" class="nav-link student-only"><i class="fas fa-dollar-sign"></i> Fee Payment</a>
+                <a href="manage-students.html" class="nav-link admin-only"><i class="fas fa-users-cog"></i> Manage Students</a>
+                <a href="#" class="nav-link"><i class="fas fa-utensils"></i> Mess Info</a>
+                <a href="#" class="nav-link"><i class="fas fa-cog"></i> Settings</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1 id="welcome-message">Welcome!</h1>
+                </div>
+                <div class="header-right">
+                    <div class="theme-switcher">
+                        <i class="fas fa-sun"></i>
+                        <label class="switch"><input type="checkbox" id="theme-toggle"><span class="slider round"></span></label>
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <button id="logout-btn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                </div>
+            </header>
+
+            <section class="stats-grid">
+                <div class="stat-card" data-modal-target="#profile-modal">
+                    <div class="card-icon" style="background-color: #e0f7fa;"><i class="fas fa-book-open" style="color: #00796b;"></i></div>
+                    <div class="card-info"><h3>My Profile</h3><p>View & Edit Details</p></div>
+                </div>
+                <div class="stat-card" data-modal-target="#dues-modal">
+                    <div class="card-icon" style="background-color: #fff3e0;"><i class="fas fa-receipt" style="color: #f57c00;"></i></div>
+                    <div class="card-info"><h3>Due Amount</h3><p>$150.00</p></div>
+                </div>
+                <div class="stat-card admin-only" data-modal-target="#applications-modal">
+                    <div class="card-icon" style="background-color: #e8f5e9;"><i class="fas fa-user-plus" style="color: #388e3c;"></i></div>
+                    <div class="card-info"><h3>New Applications</h3><p>12 Pending</p></div>
+                </div>
+                <div class="stat-card" data-modal-target="#announcements-modal">
+                    <div class="card-icon" style="background-color: #fce4ec;"><i class="fas fa-bullhorn" style="color: #d81b60;"></i></div>
+                    <div class="card-info"><h3>Announcements</h3><p>3 New Notices</p></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal" id="profile-modal">
+        <button class="modal-close-btn">&times;</button>
+        <div class="modal-header"><h2>Edit Profile</h2></div>
+        <div class="modal-body"><form class="modal-form"><input type="text" placeholder="Full Name"><input type="tel" placeholder="Phone Number"><button type="submit" class="auth-btn">Save Changes</button></form></div>
+    </div>
+    <div class="modal" id="dues-modal">
+        <button class="modal-close-btn">&times;</button>
+        <div class="modal-header"><h2>Pay Dues</h2></div>
+        <div class="modal-body"><form class="modal-form"><p>Your outstanding balance is <strong>$150.00</strong>.</p><input type="number" placeholder="Enter amount to pay"><button type="submit" class="auth-btn">Pay Now</button></form></div>
+    </div>
+    <div class="modal" id="applications-modal">
+        <button class="modal-close-btn">&times;</button>
+        <div class="modal-header"><h2>Review Applications</h2></div>
+        <div class="modal-body"><p>Review and approve new student applications.</p><button class="auth-btn">Open Application Portal</button></div>
+    </div>
+    <div class="modal" id="announcements-modal">
+        <button class="modal-close-btn">&times;</button>
+        <div class="modal-header"><h2>Post Announcement</h2></div>
+        <div class="modal-body"><form class="modal-form"><textarea rows="4" placeholder="Type your announcement here..."></textarea><button type="submit" class="auth-btn">Post Now</button></form></div>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>

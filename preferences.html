@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Preferences - Hostel HMS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-hotel"></i>
+                <h2>HMS Dashboard</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-link"><i class="fas fa-tachometer-alt"></i> Overview</a>
+                <a href="preferences.html" class="nav-link active"><i class="fas fa-bed"></i> Room Details</a>
+                <a href="#" class="nav-link"><i class="fas fa-dollar-sign"></i> Fee Payment</a>
+                <a href="#" class="nav-link"><i class="fas fa-utensils"></i> Mess Info</a>
+                <a href="#" class="nav-link"><i class="fas fa-cog"></i> Settings</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1>Room & Mess Preference Form</h1>
+                <button id="logout-btn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </header>
+            
+            <section class="form-section">
+                <div id="application-status-container" class="status-container hidden">
+                    <h3>Your Application Status:</h3>
+                    <p id="application-status"></p>
+                </div>
+                <form id="preference-form">
+                    <h2>Submit Your Preferences</h2>
+                    <p>Let us know what you're looking for. We'll do our best to accommodate.</p>
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="pref-name" placeholder="Full Name" disabled>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="pref-email" placeholder="Email" disabled>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-door-closed"></i>
+                        <select id="pref-room-type" required>
+                            <option value="" disabled selected>Select Preferred Room Type</option>
+                            <option value="Single">Single Occupancy</option>
+                            <option value="Double">Double Occupancy</option>
+                            <option value="Dormitory">Dormitory (4-person)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-utensils"></i>
+                        <select id="pref-mess-plan" required>
+                            <option value="" disabled selected>Select Mess Plan</option>
+                            <option value="Vegetarian">Vegetarian</option>
+                            <option value="Non-Vegetarian">Non-Vegetarian</option>
+                            <option value="Jain Menu">Jain Menu</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-users"></i>
+                        <input type="text" id="pref-roommate" placeholder="Preferred Roommate (Optional)">
+                    </div>
+                    <button type="submit" class="auth-btn">Save Preferences</button>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="preferences.js"></script>
+</body>
+</html>
